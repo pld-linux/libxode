@@ -1,5 +1,5 @@
 Summary:	Library of XML, memory, and string helper functions
-Summary(pl):	Biblioteka funkcji pomocniczych do XML, pamiêci i stringów
+Summary(pl):	Biblioteka funkcji pomocniczych do XML-a, pamiêci i ³añcuchów
 Name:		libxode
 Version:	0.71
 Release:	1
@@ -16,8 +16,8 @@ libxode provides a library of XML, memory, and string helper
 functions. Jabber server software uses libxode extensively.
 
 %description -l pl
-libxode to biblioteka funkcji pomocniczych do XML, pamiêci i stringów.
-U¿ywana intensywnie przez oprogramowanie serwerowe Jabber.
+libxode to biblioteka funkcji pomocniczych do XML-a, pamiêci i
+³añcuchów. U¿ywana intensywnie przez oprogramowanie serwerowe Jabber.
 
 %package devel
 Summary:	Header files and development documentation for libxode
@@ -35,13 +35,13 @@ Pliki nag³ówkowe i dokumentacja programisty do libxode.
 Summary:	Static version of libxode
 Summary(pl):	Statyczna wersja libxode
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libxode.
 
 %description static -l pl
-Statyczna wersjaa libxode.
+Statyczna wersja libxode.
 
 %prep
 %setup -q
@@ -54,9 +54,8 @@ Statyczna wersjaa libxode.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf AUTHORS ChangeLog NEWS README
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,14 +65,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %{_includedir}/%{name}*
 
 %files static
