@@ -2,6 +2,7 @@
 %define	snap	20011218
 
 Summary:	Library of XML, memory, and string helper functions
+Summary(pl):	Biblioteka funkcji pomocniczych do XML, pamiÍci i stringÛw
 Name:		libxode
 Version:	1.2
 Release:	1.%{snap}
@@ -16,11 +17,17 @@ Group(ru):	‚…¬Ã…œ‘≈À…
 Group(uk):	‚¶¬Ã¶œ‘≈À…
 Source0:	http://download.jabber.org/cvs/%{name}.tgz
 Patch0:		%{name}-cvs.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 libxode provides a library of XML, memory, and string helper
 functions. Jabber server software uses libxode extensively.
+
+%description -l pl
+libxode to biblioteka funkcji pomocniczych do XML, pamiÍci i stringÛw.
+Uøywana intensywnie przez oprogramowanie serwerowe Jabber.
 
 %package devel
 Summary:	Header files and development documentation for libxode
@@ -38,8 +45,12 @@ Requires:	%{name} = %{version}-%{release}
 %description devel
 Header files and development documentation for libxode.
 
+%description devel -l pl
+Pliki nag≥Ûwkowe i dokumentacja programisty do libxode.
+
 %package static
 Summary:	Static version of libxode
+Summary(pl):	Statyczna wersja libxode
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -52,6 +63,9 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Static version of libxode.
+
+%description static -l pl
+Statyczna wersjaa libxode.
 
 %prep
 %setup -qn libxode
