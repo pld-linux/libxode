@@ -7,6 +7,7 @@ License:	GPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libxode/%{name}-%{version}.tar.gz
 # Source0-md5:	2314649f82d11eec6ba22f88d2e4ca9b
+URL:		http://libxode.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
