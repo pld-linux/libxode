@@ -1,5 +1,5 @@
 Summary:	Library of XML, memory, and string helper functions
-Summary(pl):	Biblioteka funkcji pomocniczych do XML-a, pami阠i i 砤馽uch體
+Summary(pl.UTF-8):   Biblioteka funkcji pomocniczych do XML-a, pami臋ci i 艂a艅cuch贸w
 Name:		libxode
 Version:	0.71
 Release:	1
@@ -17,32 +17,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libxode provides a library of XML, memory, and string helper
 functions. Jabber server software uses libxode extensively.
 
-%description -l pl
-libxode to biblioteka funkcji pomocniczych do XML-a, pami阠i i
-砤馽uch體. U縴wana intensywnie przez oprogramowanie serwerowe Jabber.
+%description -l pl.UTF-8
+libxode to biblioteka funkcji pomocniczych do XML-a, pami臋ci i
+艂a艅cuch贸w. U偶ywana intensywnie przez oprogramowanie serwerowe Jabber.
 
 %package devel
 Summary:	Header files and development documentation for libxode
-Summary(pl):	Pliki nag丑wkowe i dokumentacja do libxode
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe i dokumentacja do libxode
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files and development documentation for libxode.
 
-%description devel -l pl
-Pliki nag丑wkowe i dokumentacja programisty do libxode.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe i dokumentacja programisty do libxode.
 
 %package static
 Summary:	Static version of libxode
-Summary(pl):	Statyczna wersja libxode
+Summary(pl.UTF-8):   Statyczna wersja libxode
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of libxode.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja libxode.
 
 %prep
