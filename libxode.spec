@@ -1,5 +1,5 @@
 Summary:	Library of XML, memory, and string helper functions
-Summary(pl.UTF-8):   Biblioteka funkcji pomocniczych do XML-a, pamięci i łańcuchów
+Summary(pl.UTF-8):	Biblioteka funkcji pomocniczych do XML-a, pamięci i łańcuchów
 Name:		libxode
 Version:	0.71
 Release:	1
@@ -23,7 +23,7 @@ libxode to biblioteka funkcji pomocniczych do XML-a, pamięci i
 
 %package devel
 Summary:	Header files and development documentation for libxode
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do libxode
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libxode
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -35,7 +35,7 @@ Pliki nagłówkowe i dokumentacja programisty do libxode.
 
 %package static
 Summary:	Static version of libxode
-Summary(pl.UTF-8):   Statyczna wersja libxode
+Summary(pl.UTF-8):	Statyczna wersja libxode
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
