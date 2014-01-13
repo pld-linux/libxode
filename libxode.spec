@@ -2,10 +2,10 @@ Summary:	Library of XML, memory, and string helper functions
 Summary(pl.UTF-8):	Biblioteka funkcji pomocniczych do XML-a, pamięci i łańcuchów
 Name:		libxode
 Version:	0.71
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libxode/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/libxode/%{name}-%{version}.tar.gz
 # Source0-md5:	2314649f82d11eec6ba22f88d2e4ca9b
 URL:		http://libxode.sourceforge.net/
 BuildRequires:	autoconf
@@ -70,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/lib*.so.1
 
 %files devel
 %defattr(644,root,root,755)
