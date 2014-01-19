@@ -7,9 +7,12 @@ License:	GPL v2
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libxode/%{name}-%{version}.tar.gz
 # Source0-md5:	2314649f82d11eec6ba22f88d2e4ca9b
+Patch0:		%{name}-system-expat.patch
+Patch1:		%{name}-ac.patch
 URL:		http://libxode.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	expat-devel >= 1.95
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,6 +29,7 @@ Summary:	Header files and development documentation for libxode
 Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libxode
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	expat-devel >= 1.95
 
 %description devel
 Header files and development documentation for libxode.
@@ -47,10 +51,15 @@ Statyczna wersja libxode.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-cp -f /usr/share/automake/config.sub .
+%{__libtoolize}
+%{__aclocal}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -69,16 +78,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.1
+%attr(755,root,root) %{_libdir}/libxode.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libxode.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/%{name}*
+%attr(755,root,root) %{_bindir}/libxode-config
+%attr(755,root,root) %{_libdir}/libxode.so
+%{_libdir}/libxode.la
+%{_includedir}/libxode.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libxode.a

@@ -1,0 +1,18 @@
+--- libxode-0.71/src/Makefile.am.orig	2001-03-27 01:10:20.000000000 +0200
++++ libxode-0.71/src/Makefile.am	2014-01-19 08:30:02.955065503 +0100
+@@ -1,5 +1,4 @@
+-INCLUDES = -I$(top_builddir)/include -Iexpat/lib -Iexpat
+-SUBDIRS = expat
++INCLUDES = -I$(top_builddir)/include
+ 
+ lib_LTLIBRARIES = libxode.la
+ 
+@@ -11,7 +10,7 @@
+ 	xstream.c \
+ 	xode_from.c
+ 
+-libxode_la_LIBADD = expat/xmlparse.lo  expat/xmlrole.lo  expat/xmltok.lo
++libxode_la_LIBADD = -lexpat
+ 
+ CFLAGS = -Wall -g
+ 

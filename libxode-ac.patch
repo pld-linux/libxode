@@ -1,0 +1,11 @@
+--- libxode-0.71/configure.in.orig	2001-04-24 19:10:11.000000000 +0200
++++ libxode-0.71/configure.in	2014-01-19 08:39:47.795040959 +0100
+@@ -8,7 +8,7 @@
+ AC_STDC_HEADERS
+ AC_C_BIGENDIAN
+ 
+-AC_CHECK_FUNC(snprintf,AC_DEFINE(HAVE_SNPRINTF))
++AC_CHECK_FUNC(snprintf, [AC_DEFINE(HAVE_SNPRINTF, , [have snprintf function])])
+ 
+ AC_CHECK_SIZEOF(int)
+ AC_CHECK_SIZEOF(short)
